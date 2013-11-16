@@ -64,5 +64,5 @@ If you don't like any of the default attributes, override them in
 Author:: OSU Open Source Lab (<systems@osuosl.org>)
 License:: Apache 2.0
 
-[1] http://gitolite.com/gitolite/
-[2] http://gitolite.com/gitolite/gitolite.html#install-nnc
+[1]: http://gitolite.com/gitolite/
+[2]: http://gitolite.com/gitolite/gitolite.html#install-nnc
