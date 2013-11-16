@@ -1,15 +1,13 @@
 # gitolite cookbook
 
-Cookbook for installing/configuring [gitolite].
-
-[gitolite] http://gitolite.com/gitolite/
+Cookbook for installing/configuring [gitolite][1].
 
 # Requirements
 
 Gitolite depends on these packages on a server:
  - `openssh` >= 5.0
  - `git` >= '1.6.6'
- - 'perl' >= '5.8.8'
+ - `perl` >= '5.8.8'
 
 # Usage
 
@@ -39,6 +37,7 @@ If you don't like any of the default attributes, override them in
   }
   ...
 }
+```
 
 # Attributes
 
@@ -49,10 +48,9 @@ If you don't like any of the default attributes, override them in
 
  - `repo_dir`: Directory of where the repos should live.
  
- - `user`: The [username] gitolite will use to manage all
+ - `user`: The [username][2] gitolite will use to manage all
            files and directories.
 
-[username] http://gitolite.com/gitolite/gitolite.html#install-nnc
 
 # Recipes
 
@@ -65,3 +63,6 @@ If you don't like any of the default attributes, override them in
 
 Author:: OSU Open Source Lab (<systems@osuosl.org>)
 License:: Apache 2.0
+
+[1] http://gitolite.com/gitolite/
+[2] http://gitolite.com/gitolite/gitolite.html#install-nnc
