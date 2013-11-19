@@ -17,4 +17,6 @@
 # limitations under the License.
 #
 
-include_recipe "gitolite::#{node['gitolite']['install_method']}"
+package "gitolite" do
+    action :install
+end

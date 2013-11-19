@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: gitolite
-# Recipe:: default
+# Attributes:: default
 #
 # Copyright (C) 2013 OSU Open Source Lab
 # 
@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-include_recipe "gitolite::#{node['gitolite']['install_method']}"
+default['gitolite']['install_method'] = "package"
