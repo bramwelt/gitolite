@@ -70,11 +70,15 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = :latest
 
   config.vm.provision :chef_solo do |chef|
+    chef.data_bags_path = "../../data_bags"
     chef.json = {
       :mysql => {
         :server_root_password => 'rootpass',
         :server_debian_password => 'debpass',
         :server_repl_password => 'replpass'
+      },
+      :gitolite => {
+        :admin_user => "#{ENV['USER']}"
       }
     }
 

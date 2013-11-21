@@ -20,3 +20,28 @@
 package "gitolite" do
     action :install
 end
+
+# Create pubkey file, from users databag
+admin_bag = data_bag_item("users", node['gitolite']['admin_user'])
+
+ssh_key = admin_bag["ssh_keys"]
+if ssh_key.kind_of?(Array)
+    ssh_key = ssh_key.first
+end
+
+ssh_key_path = "/tmp/#{node['gitolite']['admin_user']}.pub"
+
+file ssh_key_path do
+    content ssh_key
+    backup false
+    action :create
+end
+
+execute "Gitolite Setup" do
+    command "gl-setup -q #{ssh_key_path}"
+    user "gitolite"
+    group "gitolite"
+    environment ({'HOME' => '/var/lib/gitolite', 'USER' => 'gitolite'})
+    action :run
+    not_if "grep #{ssh_key} .ssh/authorized_keys", :environment => {'HOME' => '/var/lib/gitolite'}
+end

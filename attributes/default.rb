@@ -18,3 +18,5 @@
 #
 
 default['gitolite']['install_method'] = "package"
+default['gitolite']['hosting_user']   = "gitolite"
+default['gitolite']['admin_user']     = "admin"
