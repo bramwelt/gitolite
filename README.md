@@ -32,7 +32,7 @@ If you don't like any of the default attributes, override them in
   ...
   "default_attributes": {
     "gitolite": {
-      "install_method": "source"
+      "admin_user": "myadmin"
     }
   }
   ...
@@ -43,21 +43,12 @@ If you don't like any of the default attributes, override them in
 
 *default*
 
- - `install_method`: The method of installation for gitolite. Options
-                     are `source` and `package`. *default*: package.
-
- - `repo_dir`: Directory of where the repos should live.
- 
- - `user`: The [username][2] gitolite will use to manage all
-           files and directories.
-
+ - `admin_user`: The [admin][2] user with the initial pubkey required to
+                 clone the gitolite-admin repo.
 
 # Recipes
 
-*default* - Does it all. Installs gitolite, sets up the git user,  configures the server.
-            Because gitolite requires a sshkey to get access, one will
-            be generated during the installation, and the placed into an
-            encrypted databag.
+*default* - Installs gitolite and initializes the gitolite-admin repo.
 
 # Author
 
@@ -65,4 +56,4 @@ Author:: OSU Open Source Lab (<systems@osuosl.org>)
 License:: Apache 2.0
 
 [1]: http://gitolite.com/gitolite/
-[2]: http://gitolite.com/gitolite/gitolite.html#install-nnc
+[2]: http://gitolite.com/gitolite/setup.html

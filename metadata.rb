@@ -8,6 +8,5 @@ version          '0.1.0'
 
 recipe  "default", "Install and configure ALL the things!"
 recipe  "package", "Install gitolite from the available package manager"
-recipe  "source",  "Install gitolite from source, e.g. a git clone"
 
 depends "users"
