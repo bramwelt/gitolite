@@ -43,5 +43,5 @@ execute "Gitolite Setup" do
     group "gitolite"
     environment ({'HOME' => '/var/lib/gitolite', 'USER' => 'gitolite'})
     action :run
-    not_if "grep #{ssh_key} .ssh/authorized_keys", :environment => {'HOME' => '/var/lib/gitolite'}
+    not_if "grep #{ssh_key} .ssh/authorized_keys &>/dev/null", :environment => {'HOME' => '/var/lib/gitolite'}
 end
