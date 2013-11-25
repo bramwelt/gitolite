@@ -4,10 +4,16 @@ Cookbook for installing/configuring [gitolite][1].
 
 # Requirements
 
-Gitolite depends on these packages on a server:
+Server packages:
  - `openssh` >= 5.0
  - `git` >= '1.6.6'
  - `perl` >= '5.8.8'
+
+Cookbooks:
+ - [users][3]
+
+Because gitolite requires a SSH pubkey to setup, [users][3] needs to be
+setup and configured before hand with at least one user.
 
 # Usage
 
@@ -57,3 +63,4 @@ License:: Apache 2.0
 
 [1]: http://gitolite.com/gitolite/
 [2]: http://gitolite.com/gitolite/setup.html
+[3]: https://github.com/opscode-cookbooks/users
