@@ -31,7 +31,7 @@ Include `gitolite` in your node's `run_list`:
 ```
 
 If you don't like any of the default attributes, override them in
-`default\_attributes`:
+`default_attributes`:
 
 ```json
 {
