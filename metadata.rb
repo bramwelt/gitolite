@@ -9,4 +9,6 @@ version          '0.1.0'
 recipe  "default", "Install and configure ALL the things!"
 recipe  "package", "Install gitolite from the available package manager"
 
+supports "centos"
+
 depends "users"
