@@ -45,3 +45,5 @@ execute "Gitolite Setup" do
     action :run
     not_if "grep #{ssh_key} .ssh/authorized_keys &>/dev/null", :environment => {'HOME' => '/var/lib/gitolite'}
 end
+
+include_recipe "gitolite::config"
